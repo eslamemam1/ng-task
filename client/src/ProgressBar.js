@@ -1,6 +1,5 @@
 import React from 'react'
 /** ProgressBar Increase When Counter Increase */
-/** */
 function ProgressBar({ counter, data }) {
     const ProgressScore = (counter / data.length)*100;
   return (

@@ -16,7 +16,6 @@ function App() {
   const [hidden, setHidden] = useState(false);
 
   /** Get Data From Api Using Axios Request */
-  /** */
   useEffect(() => {
     axios.request("http://localhost:9090/words").then(function (response) {
       setLoading(false);

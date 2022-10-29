@@ -1,6 +1,5 @@
 import React from 'react'
 /** Wrong Answer Component View The Result When The Answer Is Wrong */
-/** */
 function WrongAnswer({exit}) {
   return (
     <div className=' w-2/4 h-1/4 rounded-xl bg-[#1f2840] flex flex-col'>
