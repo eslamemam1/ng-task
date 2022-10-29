@@ -11,7 +11,7 @@ Run the following command to start the react app. Client runs on port 3000.
 cd client
 npm start
 ```
-# project build with 
+# Project build with 
 - React.js .
 - Tailwindcss .
 - Express .
