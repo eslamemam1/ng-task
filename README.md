@@ -12,3 +12,4 @@ cd client
 npm start
 ```
 # ng-task
+answer the following question to know the your result and your rank
