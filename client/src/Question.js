@@ -1,5 +1,6 @@
 import React from 'react'
 /** Question Component View The current Question Number And The Question */
+/** */
 function Question({data , counter}) {
   return (
       <div className=' questions flex flex-col text-white h-full m-auto w-4/5'>

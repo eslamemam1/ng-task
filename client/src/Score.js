@@ -1,5 +1,6 @@
 import React from 'react'
 //** Score Component View Score And Rank Result */
+/** */
 function Score({ score, data, finalScore, reset }) {
   return (
       <div className=' flex flex-col items-center w-full'>
