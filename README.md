@@ -19,7 +19,7 @@ npm start
 - WrongAnswer
 
 # How to use 
-Answer the following questions to know the score and rank
+Answer the following questions to find out your score and rank
 
 # Final Result 
 - Final Score : 50 => Rank: 40
