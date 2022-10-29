@@ -1,5 +1,5 @@
 import React from 'react'
-
+/** Selections Component View The Buttons Come From Array */
 function Selections({nextQuestion , arr}) {
   return (
       <div className=' btns flex flex-col w-4/5 '>

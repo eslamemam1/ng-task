@@ -6,6 +6,7 @@ import WrongAnswer from './WrongAnswer';
 import ProgressBar from './ProgressBar';
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -14,23 +15,23 @@ function App() {
   const [finalScore, setFinalScore] = useState();
   const [hidden, setHidden] = useState(false);
 
+  /** Get Data From Api Using Axios Request */
   useEffect(() => {
     axios.request("http://localhost:9090/words").then(function (response) {
       setLoading(false);
       setData(response.data);
-      console.log(response.data)
     }).catch(function (error) {
       setLoading(false);
       console.error(error);
     })
   }, []);
 
+  /** Send Data Using Axios Post  */
   useEffect(() => {
     axios.post("http://localhost:9090/rank", {
     "finalScore" : (score/(counter+1))*100
     }).then(res => {
         setLoading(false);
-        console.log(res)
         setFinalScore(res)
   })
       .catch(err => {
@@ -39,7 +40,7 @@ function App() {
       })
   }, [counter])
   
-
+  /** If targetValue Equal valueOfPos Go To Next Question */
   const nextQuestion = (e) => {
     const targetValue = e.target.value;
     const foundValue = data.findIndex(item => item.word === data[counter].word);
@@ -57,20 +58,21 @@ function App() {
     }
   }
 
-  const arr = ["verb","adverb","noun","adjective"];
+  const arr = ["verb", "adverb", "noun", "adjective"];
+
+  /** Function To Reset Counter and Score Stat */
   const reset = () => {
     setCounter(0);
     setScore(0);
   }
-
+  /** Function To Exit From Wrong Answer Window */
   const exit = ()=>{
     setHidden(false);
-    console.log("exit")
   }
   
   return (
     <div className="bg-[#67b8fb] w-full h-screen flex justify-center items-center ">
-        {loading ? "loading" :
+        {loading ? "" :
           hidden ? <WrongAnswer exit={ exit } /> :  
           <div className=' flex flex-col justify-center items-center w-2/3 h-1/2 rounded-xl bg-[#1f2840]'>
             { 
@@ -85,7 +87,7 @@ function App() {
             <ProgressBar counter={counter} data={data} />
         </div> 
       }
-      </div>
+    </div>
   );
 }
 
